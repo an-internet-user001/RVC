@@ -2069,17 +2069,11 @@ with gr.Blocks(title="RVC WebUI") as app:
             except:
                 gr.Markdown(traceback.format_exc())
 
-        # with gr.TabItem(i18n("招募音高曲线前端编辑器")):
-        #     gr.Markdown(value=i18n("加开发群联系我xxxxx"))
-        # with gr.TabItem(i18n("点击查看交流、问题反馈群号")):
-        #     gr.Markdown(value=i18n("xxxxx"))
-
-    if config.iscolab:
-        app.queue(concurrency_count=511, max_size=1022).launch(share=True)
-    else:
         app.queue(concurrency_count=511, max_size=1022).launch(
+            share=True,
             server_name="0.0.0.0",
             inbrowser=not config.noautoopen,
             server_port=config.listen_port,
             quiet=True,
         )
+
