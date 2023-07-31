@@ -21,9 +21,6 @@ infer_uvr5.py
 mute.zip
 myinfer-v2-0528.py
 myinfer.py
-slicer.py
 trainset_preprocess_pipeline.py
 vc_infer_pipeline.py
-vits_vc_gpu.7z
-vits_vc_gpu_train.7z
 使用需遵守的协议-LICENSE.txt
