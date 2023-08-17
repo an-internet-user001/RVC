@@ -6,7 +6,7 @@ authors = ["lj1995"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.7 || ^3.8 || ^3.9 || ^3.10 || ^3.11"
+python = "^3.8"
 torch = "^2.0.0"
 torchaudio = "^2.0.1"
 Cython = "^0.29.34"
@@ -22,7 +22,7 @@ faiss-cpu = "^1.7.2"
 Jinja2 = "^3.1.2"
 json5 = "^0.9.11"
 librosa = "0.9.1"
-llvmlite = ">=0.38.0"
+llvmlite = "0.39.0"
 Markdown = "^3.4.3"
 matplotlib = "^3.7.1"
 matplotlib-inline = "^0.1.6"
