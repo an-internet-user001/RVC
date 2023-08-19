@@ -27,8 +27,6 @@ then
     sudo apt-get install -y python3
 fi
 
-# Rest of your startup script...
-
 # Create virtual environment
 echo "Creating virtual environment"
 python3 -m venv rvc || { echo "Could not create virtual environment. Exiting script."; exit 1; }
@@ -37,11 +35,10 @@ python3 -m venv rvc || { echo "Could not create virtual environment. Exiting scr
 echo "Activating virtual environment"
 source rvc/bin/activate
 
-echo "Updating package lists"
-sudo apt-get update
-
+# Installing git-lfs
 echo "Installing git-lfs"
 sudo apt-get install git-lfs
+git lfs install
 
 echo "Cloning GitHub repository"
 git clone https://github.com/an-internet-user001/RVC.git Retrieval-based-Voice-Conversion-WebUI
