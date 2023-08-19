@@ -1,9 +1,4 @@
-gcloud compute instances create rvcinstance-1 \
---project=eminent-sunrise-396420 \
---zone=us-central1-a \
---machine-type=a2-ultragpu-1g \
---network-interface=network-tier=PREMIUM,nic-type=GVNIC,stack-type=IPV4_ONLY,subnet=default \
---metadata=startup-script='#!/bin/bash
+#!/bin/bash
 set -e
 
 # Update package lists for upgrades and new package installations
@@ -67,20 +62,3 @@ pip install -r requirements.txt || { echo "Could not install packages from requi
 
 echo "Launching the application"
 python infer-web.py
-' \
---can-ip-forward \
---maintenance-policy=TERMINATE \
---provisioning-model=STANDARD \
---service-account=31420661161-compute@developer.gserviceaccount.com \
---scopes=https://www.googleapis.com/auth/cloud-platform \
---accelerator=count=1,type=nvidia-a100-80gb \
---tags=http-server,https-server \
---create-disk=auto-delete=yes,boot=yes,device-name=primarydrive,image=projects/ml-images/global/images/c0-deeplearning-common-cu113-v20230807-debian-10,mode=rw,size=500,type=projects/eminent-sunrise-396420/zones/us-central1-a/diskTypes/pd-balanced \
---create-disk=device-name=dataset,mode=rw,name=dataset,size=500,type=projects/eminent-sunrise-396420/zones/us-central1-a/diskTypes/pd-ssd \
---shielded-secure-boot \
---shielded-vtpm \
---shielded-integrity-monitoring \
---labels=goog-ec-src=vm_add-gcloud \
---reservation-affinity=any \
---threads-per-core=2 \
---visible-core-count=6
